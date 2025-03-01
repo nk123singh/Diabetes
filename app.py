@@ -7,8 +7,7 @@ import numpy as np
 filename = 'diabetes-prediction-rfc-model.pkl'
 classifier = pickle.load(open(filename, 'rb'))
 
-app = Flask(__name__)
-
+app = Flask(__name__, static_folder='static')
 @app.route('/')
 def home():
 	return render_template('index.html')
